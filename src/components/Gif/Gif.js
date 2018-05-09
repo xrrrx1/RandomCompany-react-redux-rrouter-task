@@ -26,12 +26,19 @@ class Gif extends Component {
   }
 }
 
-const mapStateToProps = store => ({
-  image: store.gif.image
-});
+// const mapStateToProps = store => ({
+//   image: store.gif.image
+// });
 
-const mapDispatchToProps = dispatch => ({
-  refreshGif: () => dispatch(refreshGif())
-});
+// const mapDispatchToProps = dispatch => ({
+//   refreshGif: () => dispatch(refreshGif())
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Gif);
+// export default connect(mapStateToProps, mapDispatchToProps)(Gif);
+
+export default connect(
+  store => ({
+    image: store.gif.image
+  }),
+  { refreshGif }
+)(Gif);
