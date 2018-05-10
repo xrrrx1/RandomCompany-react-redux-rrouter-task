@@ -11,13 +11,13 @@ export class Counter extends Component {
     count: 0
   };
 
-  incrementCounter = e => {
+  incrementCounter = () => {
     this.setState({
       count: this.state.count + 1
     });
   };
 
-  decrementCounter = e => {
+  decrementCounter = () => {
     this.setState({
       count: this.state.count - 1
     });

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 export class Input extends Component {
   constructor(props) {
     super();
+    this.handleChange = this.handleChange.bind(this);
   }
 
   static propTypes = {};
@@ -17,7 +18,7 @@ export class Input extends Component {
         <input
           type="text"
           value={this.state.message}
-          onChange={this.handleChange.bind(this)}
+          onChange={this.handleChange}
         />
         <p>
           Hello, {this.state.message}
