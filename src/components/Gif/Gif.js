@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { refreshGif } from "../../AC/gifAC";
 import PropTypes from "prop-types";
+import Loader from "../Loader/Loader";
 
 class Gif extends Component {
   constructor(props) {
@@ -16,9 +17,11 @@ class Gif extends Component {
   render() {
     return (
       <div>
-        <div>
-          <img src={this.props.image} alt="" />
-        </div>
+        {this.props.isLoading
+          ? <Loader />
+          : <div>
+              <img src={this.props.image} alt="" />
+            </div>}
 
         <button onClick={this.props.refreshGif}>Refresh</button>
       </div>
@@ -38,7 +41,8 @@ class Gif extends Component {
 
 export default connect(
   store => ({
-    image: store.gif.image
+    image: store.gif.image,
+    isLoading: store.gif.isLoading
   }),
   { refreshGif }
 )(Gif);

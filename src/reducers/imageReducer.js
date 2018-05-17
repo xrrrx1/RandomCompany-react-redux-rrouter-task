@@ -1,7 +1,8 @@
-import { FETCH_DATA_REQUEST } from "../constants";
+import { FETCH_DATA_REQUEST, FETCH_DATA_RECEIVE } from "../constants";
 
 const initialState = {
-  image: null
+  image: null,
+  isLoading: false
 };
 
 export default function(state = initialState, action) {
@@ -11,7 +12,13 @@ export default function(state = initialState, action) {
     case FETCH_DATA_REQUEST:
       return {
         ...state,
-        image: payload
+        isLoading: true
+      };
+    case FETCH_DATA_RECEIVE:
+      return {
+        ...state,
+        image: payload,
+        isLoading: false
       };
     default:
       return state;
