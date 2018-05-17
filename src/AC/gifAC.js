@@ -30,7 +30,7 @@ import axios from "axios";
 //         payload: images.data.image_original_url
 //       })
 //     );
-//   }, 1200);
+//   }, 1400);
 // };
 
 export const refreshGif = () => async dispatch => {
