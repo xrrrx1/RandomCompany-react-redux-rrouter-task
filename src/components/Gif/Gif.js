@@ -11,7 +11,8 @@ class Gif extends Component {
 
   static propTypes = {
     refreshGif: PropTypes.func.isRequired,
-    image: PropTypes.string.isRequired
+    image: PropTypes.string.isRequired,
+    isLoading: PropTypes.bool.isRequired
   };
 
   render() {
