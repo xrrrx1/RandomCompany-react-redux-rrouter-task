@@ -16,15 +16,16 @@ class Gif extends Component {
   };
 
   render() {
+    const { isLoading, image, refreshGif } = this.props;
     return (
       <div>
-        {this.props.isLoading
+        {isLoading
           ? <Loader />
           : <div>
-              <img src={this.props.image} alt="" />
+              <img src={image} alt="" />
             </div>}
 
-        <button onClick={this.props.refreshGif}>Refresh</button>
+        <button onClick={refreshGif}>Refresh</button>
       </div>
     );
   }
